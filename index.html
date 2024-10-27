@@ -24,27 +24,27 @@
             <h2>You <em>know</em> you want to.</h2>
         </header>
         <main>
-            <form action="#" method="post">
+            <form action="#" method="POST" id="my-form">
                 <div class="form-header-container">
                     <h3>Let's do this!</h3>
                 </div>
                 <div class="form-column-container">
                     <div class="form-column">
-                        <div class="form-row"><label for="txtFirstName">FIRST NAME</label><input type="text" id="txtFirstName"></div>
-                        <div class="form-row"><label for="txtEmail">EMAIL</label><input type="text" id="txtEmail"></div>
-                        <div class="form-row"><label for="txtPass">PASSWORD</label><input type="text" id="txtPass"></div>
+                        <div class="form-row"><label for="txtFirstName">FIRST NAME</label><input type="text" id="txtFirstName" pattern="[A-Za-z][A-za-z ]+" minlength="1" maxlength="50" required></div>
+                        <div class="form-row"><label for="txtEmail">EMAIL</label><input type="email" id="txtEmail" placeholder="e.g john@mail.com" pattern="[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+" required></div>
+                        <div class="form-row"><label for="txtPass">PASSWORD</label><input type="password" id="txtPass" required minlength="8" maxlength="40"> <span id="lblInvalid">* Passwords do not match</span></div>
                     </div>
                     <div class="form-column">
-                        <div class="form-row"><label for="txtLastName">LAST NAME</label><input type="text" name="lastName" id="txtLastName"></div>
-                        <div class="form-row"><label for="txtPhone">PHONE NUMBER</label><input type="text" name="phoneNum" id="txtPhone"></div>
-                        <div class="form-row"><label for="txtConfirm">CONFIRM PASSWORD</label><input type="text" name="confirmPass" id="txtConfirm"></div>
+                        <div class="form-row"><label for="txtLastName">LAST NAME</label><input type="text" name="lastName" id="txtLastName" required minlength="1" maxlength="50"></div>
+                        <div class="form-row"><label for="txtPhone">PHONE NUMBER</label><input type="tel" name="phoneNum" id="txtPhone" placeholder="555-555-5555" pattern="([0-9]{10})|([0-9]{3}(.|-|\s)){2}[0-9]{4}" required></div>
+                        <div class="form-row"><label for="txtConfirm">CONFIRM PASSWORD</label><input type="password" name="confirmPass" id="txtConfirm" required minlength="8" maxlength="40"></div>
                     </div>
                 </div>
                 
             </form>
         </main>
         <footer>
-            <button>Create Account</button>
+            <input type="submit" value="Create Account" form="my-form"></input>
             <p>You already have an account? <a href="#">Log in.</a></p>
         </footer>
     </div>
