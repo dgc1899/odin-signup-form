@@ -5,6 +5,13 @@
         url("font/norse-bold-webfont.woff") format("woff");
 }
 
+@font-face {
+    font-family: "bebasneue";
+    src:
+     url("font/bebasneue-regular-webfont.woff2") format("woff2"),
+     url("font/bebasneue-regular-webfont.woff") format("woff");
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,9 +19,142 @@
     border: 0;
     font-size: 100%;
     font: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    --base-spacing: 0.5rem;
+    --sidebar-width: 30vw;
+    --font-size-header: 1.5rem;
+    --section-height:20vh;
+    --border-radius: 4px;
+}
+
+body {
+    display: flex;
+    background-color:aliceblue;
 }
 
 h1 {
     font-family: "norse", Arial, Helvetica, sans-serif;
 }
 
+em {
+    font-style: italic;
+}
+
+.sidebar-image {
+    height: 100vh;
+    width: var(--sidebar-width);
+}
+
+.sidebar-image img {
+    width: inherit;
+    height: inherit;
+}
+
+.black-bar {
+    position: relative;
+    width: inherit;
+    bottom:80vh;
+    background-color: rgb(0,0,0,0.5);
+    font-size: 5rem;
+    color: white;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: inherit;
+    padding: 10px;
+    margin: 2px;
+}
+
+.logo-container img {
+    width: 100px;
+    height: auto;
+    margin: 10 0px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - var(--sidebar-width));
+    height: 100vh;
+    margin-left:calc(var(--base-spacing) * 5) ;
+}
+
+.main-content>header {
+    padding-top: calc(var(--base-spacing) * 15);
+    padding-right: calc(var(--base-spacing) * 20);
+}
+
+.main-content>header>h2:nth-of-type(3) {
+    margin-top: calc(var(--base-spacing)* 2);
+}
+
+
+.main-content>main {
+    height: 33vh;
+    margin-left: 0;
+    margin-top: calc(var(--base-spacing) * 8);
+    background-color: white;
+    margin-left: calc(var(--base-spacing) * -5);
+    border-radius: var(--border-radius);
+    box-shadow: 2px 2px 2px gray;
+}
+
+
+.main-content h2 {
+    font-size: var(--font-size-header);
+    font-weight: bold;
+}
+
+main>form {
+    display: flex;
+    flex-direction: column;
+    margin-left: calc(var(--base-spacing) * 5);
+}
+
+main>form h3 {
+    font-size: var(--font-size-header);
+    font-weight: bold;
+    margin-top: calc(var(--base-spacing) * 2);
+}
+
+main>form label {
+    font-family: "bebasneue", sans-serif;
+    color: gray;
+    letter-spacing: 3px;
+}
+
+main>form>.form-column-container {
+    display: flex;
+    margin-top: 1rem;
+
+}
+
+.form-column {
+    width: 33%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc(var(--base-spacing) * 3) ;
+}
+
+.form-row input {
+    width: 75%;
+    height: 2rem;
+    border-style:solid;
+    border-width: 0.1rem;
+    border-color: lightgray;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+}
+
+.form-row input:focus {
+    outline:solid 1px lightblue;
+}
