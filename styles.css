@@ -102,7 +102,7 @@ em {
     background-color: white;
     margin-left: calc(var(--base-spacing) * -5);
     border-radius: var(--border-radius);
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 1px 1px 2px gray;
 }
 
 
@@ -157,4 +157,30 @@ main>form>.form-column-container {
 
 .form-row input:focus {
     outline:solid 1px lightblue;
+    box-shadow: 1px gray;
+}
+
+footer {
+    margin-top: calc(var(--base-spacing) * 4);
+}
+
+footer button {
+    border-radius: var(--border-radius);
+    padding: calc(var(--base-spacing) * 1.5)
+            calc(var(--base-spacing) * 4);
+    background-color: #596D48;
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}
+
+footer p {
+    margin-top:calc(var(--base-spacing) * 4);
+}
+
+footer p>a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
 }
